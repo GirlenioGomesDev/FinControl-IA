@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - path: .env.example
+      - path: .env
+        required: false
+    environment:
+      NEXT_PUBLIC_APP_URL: http://localhost:3000
+      NODE_ENV: production
